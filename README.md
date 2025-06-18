@@ -43,7 +43,7 @@ FoodTrient is an AI-powered web app that lets users analyze food by uploading im
 ## 📦 Setup
 
 ```bash
-git clone https://github.com/yourusername/foodtrient.git
+git clone https://github.com/chiragRane-Projects/foodtrient.git
 cd foodtrient
 npm install
 npm run dev
