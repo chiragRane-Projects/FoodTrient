@@ -88,13 +88,6 @@ const Hero = () => {
             Start Analyzing Food
           </motion.button>
           
-          <motion.button
-            className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-2xl text-lg font-semibold hover:bg-slate-50 transform transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Watch Demo
-          </motion.button>
         </motion.div>
 
         {/* Floating Food Icons */}
