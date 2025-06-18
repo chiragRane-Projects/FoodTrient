@@ -194,7 +194,7 @@ const DashboardPage = () => {
         animate={{ y: 0, opacity: 1 }}
         className="bg-white shadow-sm border-b border-slate-200"
       >
-        <div className="max-w-6xl mx-auto px-6 py-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <motion.div
@@ -205,13 +205,13 @@ const DashboardPage = () => {
                 <Sparkle className="w-5 h-5 text-white" />
               </motion.div>
               <div>
-                <h1 className="text-2xl font-bold text-slate-800">FoodTrient</h1>
-                <p className="text-sm text-slate-600">AI-Powered Nutrition Analysis</p>
+                <h1 className="text-xl sm:text-2xl font-bold text-slate-800">FoodTrient</h1>
+                <p className="text-xs sm:text-sm text-slate-600">AI-Powered Nutrition Analysis</p>
               </div>
             </div>
             
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-2 text-sm text-slate-600">
+            <div className="flex items-center space-x-4 sm:space-x-6">
+              <div className="flex items-center space-x-2 text-xs sm:text-sm text-slate-600">
                 <Heart className="w-4 h-4 text-red-500" />
                 <span>Healthy Living</span>
               </div>
@@ -221,8 +221,8 @@ const DashboardPage = () => {
       </motion.header>
 
       {/* Navigation Tabs */}
-      <div className="max-w-6xl mx-auto px-6 pt-8">
-        <div className="flex space-x-1 bg-white rounded-xl p-1 shadow-sm border border-slate-200 mb-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-1 bg-white rounded-xl p-1 shadow-sm border border-slate-200 mb-6 sm:mb-8">
           {[
             { id: 'analyze', label: 'Food Analysis', icon: Camera },
             { id: 'chat', label: 'Nutrition Chat', icon: MessageCircle }
@@ -230,7 +230,7 @@ const DashboardPage = () => {
             <motion.button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 flex items-center justify-center space-x-2 py-3 px-6 rounded-lg font-medium transition-all ${
+              className={`flex-1 flex items-center justify-center space-x-2 py-3 px-4 sm:px-6 rounded-lg font-medium transition-all ${
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white shadow-md'
                   : 'text-slate-600 hover:text-slate-800 hover:bg-slate-50'
@@ -238,8 +238,8 @@ const DashboardPage = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <tab.icon className="w-5 h-5" />
-              <span>{tab.label}</span>
+              <tab.icon className="w-4 sm:w-5 h-4 sm:h-5" />
+              <span className="text-sm sm:text-base">{tab.label}</span>
             </motion.button>
           ))}
         </div>
@@ -253,12 +253,12 @@ const DashboardPage = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8"
             >
               {/* Upload Section */}
-              <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
-                <h2 className="text-xl font-semibold text-slate-800 mb-6 flex items-center">
-                  <Upload className="w-5 h-5 mr-2 text-emerald-500" />
+              <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 sm:p-8">
+                <h2 className="text-lg sm:text-xl font-semibold text-slate-800 mb-4 sm:mb-6 flex items-center">
+                  <Upload className="w-4 sm:w-5 h-4 sm:h-5 mr-2 text-emerald-500" />
                   Upload Food Image
                 </h2>
                 
@@ -267,18 +267,18 @@ const DashboardPage = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => fileInputRef.current?.click()}
-                    className="border-2 border-dashed border-slate-300 rounded-xl p-12 text-center cursor-pointer hover:border-emerald-400 hover:bg-emerald-50 transition-all"
+                    className="border-2 border-dashed border-slate-300 rounded-xl p-8 sm:p-12 text-center cursor-pointer hover:border-emerald-400 hover:bg-emerald-50 transition-all"
                   >
-                    <Camera className="w-12 h-12 text-slate-400 mx-auto mb-4" />
-                    <p className="text-slate-600 mb-2">Click to upload a food image</p>
-                    <p className="text-sm text-slate-500">PNG, JPG, GIF up to 10MB</p>
+                    <Camera className="w-10 sm:w-12 h-10 sm:h-12 text-slate-400 mx-auto mb-4" />
+                    <p className="text-slate-600 text-sm sm:text-base mb-2">Click to upload a food image</p>
+                    <p className="text-xs sm:text-sm text-slate-500">PNG, JPG, GIF up to 10MB</p>
                   </motion.div>
                 ) : (
                   <div className="relative">
                     <img
                       src={imagePreview}
                       alt="Food preview"
-                      className="w-full h-64 object-cover rounded-xl border border-slate-200"
+                      className="w-full h-48 sm:h-64 object-cover rounded-xl border border-slate-200"
                     />
                     <button
                       onClick={clearImage}
@@ -303,16 +303,16 @@ const DashboardPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     onClick={analyzeImage}
                     disabled={isAnalyzing}
-                    className="w-full mt-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white py-3 px-6 rounded-xl font-medium hover:from-emerald-600 hover:to-cyan-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center space-x-2"
+                    className="w-full mt-4 sm:mt-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white py-3 px-6 rounded-xl font-medium hover:from-emerald-600 hover:to-cyan-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center space-x-2"
                   >
                     {isAnalyzing ? (
                       <>
-                        <Loader2 className="w-5 h-5 animate-spin" />
+                        <Loader2 className="w-4 sm:w-5 h-4 sm:h-5 animate-spin" />
                         <span>Analyzing...</span>
                       </>
                     ) : (
                       <>
-                        <Brain className="w-5 h-5" />
+                        <Brain className="w-4 sm:w-5 h-4 sm:h-5" />
                         <span>Analyze Nutrition</span>
                       </>
                     )}
@@ -321,9 +321,9 @@ const DashboardPage = () => {
               </div>
 
               {/* Results Section */}
-              <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
-                <h2 className="text-xl font-semibold text-slate-800 mb-6 flex items-center">
-                  <TrendingUp className="w-5 h-5 mr-2 text-cyan-500" />
+              <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 sm:p-8">
+                <h2 className="text-lg sm:text-xl font-semibold text-slate-800 mb-4 sm:mb-6 flex items-center">
+                  <TrendingUp className="w-4 sm:w-5 h-4 sm:h-5 mr-2 text-cyan-500" />
                   Analysis Results
                 </h2>
                 
@@ -338,9 +338,9 @@ const DashboardPage = () => {
                     </div>
                   </motion.div>
                 ) : (
-                  <div className="text-center py-12">
-                    <Brain className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-                    <p className="text-slate-500">Upload and analyze a food image to see detailed nutrition information</p>
+                  <div className="text-center py-8 sm:py-12">
+                    <Brain className="w-10 sm:w-12 h-10 sm:h-12 text-slate-300 mx-auto mb-4" />
+                    <p className="text-slate-500 text-sm sm:text-base">Upload and analyze a food image to see detailed nutrition information</p>
                   </div>
                 )}
               </div>
@@ -354,19 +354,19 @@ const DashboardPage = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden"
+              className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden flex flex-col max-h-[calc(100vh-200px)] sm:max-h-[calc(100vh-150px)]"
             >
               {/* Chat Header */}
-              <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 p-6">
-                <h2 className="text-xl font-semibold text-white flex items-center">
-                  <MessageCircle className="w-5 h-5 mr-2" />
+              <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 p-4 sm:p-6">
+                <h2 className="text-lg sm:text-xl font-semibold text-white flex items-center">
+                  <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
                   Nutrition Assistant
                 </h2>
-                <p className="text-emerald-100 text-sm mt-1">Ask me anything about nutrition, diet, and healthy eating</p>
+                <p className="text-emerald-100 text-xs sm:text-sm mt-1">Ask me anything about nutrition, diet, and healthy eating</p>
               </div>
 
               {/* Chat Messages */}
-              <div className="h-96 overflow-y-auto p-6 space-y-4">
+              <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
                 <AnimatePresence>
                   {chatMessages.map((msg, index) => (
                     <motion.div
@@ -376,13 +376,13 @@ const DashboardPage = () => {
                       className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}
                     >
                       <div
-                        className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl ${
+                        className={`max-w-[80%] sm:max-w-xs lg:max-w-md px-3 sm:px-4 py-2 sm:py-3 rounded-2xl ${
                           msg.type === 'user'
                             ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white'
                             : 'bg-slate-100 text-slate-800'
                         }`}
                       >
-                        <p className="text-sm whitespace-pre-wrap">{msg.message}</p>
+                        <p className="text-xs sm:text-sm whitespace-pre-wrap">{msg.message}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -394,10 +394,10 @@ const DashboardPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex justify-start"
                   >
-                    <div className="bg-slate-100 text-slate-800 px-4 py-3 rounded-2xl">
+                    <div className="bg-slate-100 text-slate-800 px-3 sm:px-4 py-2 sm:py-3 rounded-2xl">
                       <div className="flex items-center space-x-2">
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                        <span className="text-sm">Thinking...</span>
+                        <Loader2 className="w-3 sm:w-4 h-3 sm:h-4 animate-spin" />
+                        <span className="text-xs sm:text-sm">Thinking...</span>
                       </div>
                     </div>
                   </motion.div>
@@ -405,14 +405,14 @@ const DashboardPage = () => {
               </div>
 
               {/* Chat Input */}
-              <form onSubmit={(e) => { e.preventDefault(); sendChatMessage(); }} className="border-t border-slate-200 p-6">
-                <div className="flex space-x-4">
+              <div className="border-t border-slate-200 p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                   <input
                     type="text"
                     value={currentMessage}
                     onChange={(e) => setCurrentMessage(e.target.value)}
                     placeholder="Ask about nutrition, recipes, diet tips..."
-                    className="flex-1 px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="flex-1 px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
                     onKeyPress={(e) => e.key === 'Enter' && sendChatMessage()}
                     disabled={isChatting}
                   />
@@ -421,16 +421,12 @@ const DashboardPage = () => {
                     whileTap={{ scale: 0.95 }}
                     onClick={sendChatMessage}
                     disabled={isChatting || !currentMessage.trim()}
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      sendChatMessage();
-                    }}
-                    className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-6 py-3 rounded-xl hover:from-emerald-600 hover:to-cyan-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                    className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-4 sm:px-6 py-3 rounded-xl hover:from-emerald-600 hover:to-cyan-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center"
                   >
-                    <Send className="w-5 h-5" />
+                    <Send className="w-4 sm:w-5 h-4 sm:h-5" />
                   </motion.button>
                 </div>
-              </form>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -441,9 +437,9 @@ const DashboardPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="mt-16 py-8 text-center text-slate-500 text-sm"
+        className="mt-8 sm:mt-16 py-8 text-center text-slate-500 text-xs sm:text-sm"
       >
-        <p>Developed by <Link href="https://github.com/chiragRane-Projects" className='text-xl font-bold'>Chirag Rane</Link> • Made with ❤️ for healthy living</p>
+        <p>Developed by <Link href="https://github.com/chiragRane-Projects" className='text-lg sm:text-xl font-bold'>Chirag Rane</Link> • Made with ❤️ for healthy living</p>
       </motion.footer>
     </div>
   );
