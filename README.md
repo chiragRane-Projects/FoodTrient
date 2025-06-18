@@ -25,9 +25,9 @@ FoodTrient is an AI-powered web app that lets users analyze food by uploading im
 
 ---
 
-## 📸 Demo
+## 🌐  Live
 
-Coming soon...
+[Link](https://foodtrient.vercel.app/)
 
 ---
 
