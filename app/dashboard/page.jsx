@@ -5,7 +5,6 @@ import { Upload, Camera, MessageCircle, Send, Loader2, Apple, Brain, Heart, Tren
 import Link from 'next/link';
 
 const DashboardPage = () => {
-  // ... existing state variables ...
   const [activeTab, setActiveTab] = useState('analyze');
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);

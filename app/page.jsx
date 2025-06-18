@@ -80,6 +80,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
         >
+          <a href='/dashboard'>
           <motion.button
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl hover:shadow-emerald-500/25 transform transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
@@ -87,6 +88,8 @@ const Hero = () => {
           >
             Start Analyzing Food
           </motion.button>
+          </a>
+          
           
         </motion.div>
 
@@ -334,6 +337,7 @@ const Footer = () => {
             Join thousands of users who are making smarter food choices with Foodtrient
           </p>
           
+          <a href='/dashboard'>
           <motion.button
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-12 py-4 rounded-2xl text-lg font-semibold shadow-2xl hover:shadow-emerald-500/25"
             whileHover={{ scale: 1.05, y: -2 }}
@@ -341,6 +345,7 @@ const Footer = () => {
           >
             Get Started Now
           </motion.button>
+          </a>
           
           <div className="mt-12 pt-8 border-t border-slate-700 text-slate-400">
             <p>&copy; 2025 Foodtrient. All rights reserved.</p>
